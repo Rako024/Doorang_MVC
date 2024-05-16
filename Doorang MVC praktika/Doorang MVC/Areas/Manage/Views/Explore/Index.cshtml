@@ -1,0 +1,52 @@
+﻿@{
+    int count = 1;
+}
+
+@using Core.Models
+@model List<Explore>
+
+
+    <div class="container">
+        <h1 class="text-secondary">Explores</h1>
+    <a asp-action="Create" class="btn btn-primary">Create</a>
+
+</div>
+<div class="container justify-content-center">
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">SubTitle</th>
+                <th scope="col">Description</th>
+                <th scope="col">Image</th>
+                <th scope="col">Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@count</th>
+                    <td>@item.Id</td>
+                    <td>@item.Title</td>
+                    <td>@item.SubTitle</td>
+                    <td>@item.Descrption</td>
+                    <td>
+                        <img src="~/upload/explore/@item.ImgUrl" width="100" height="100"/>
+                    </td>
+                    <td>
+                        <a class="btn btn-info" asp-action="Update" asp-route-id="@item.Id">Update</a>
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+                count++;
+            }
+            
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,30 @@
+﻿@using Core.Models
+@model Explore
+
+<div class="container justify-content-center">
+
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label asp-for="Title" class="form-label">Title</label>
+            <input asp-for="Title" class="form-control">
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="SubTitle" class="form-label">SubTitle</label>
+            <input asp-for="SubTitle" class="form-control">
+            <span asp-validation-for="SubTitle" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Descrption" class="form-label">Description</label>
+            <input asp-for="Descrption" class="form-control">
+            <span asp-validation-for="Descrption" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="PhotoFile" class="form-label">Photo File</label>
+            <input asp-for="PhotoFile" class="form-control">
+            <span asp-validation-for="PhotoFile" class="text-danger"></span>
+        </div>
+        <div class="text-danger" asp-validation-summary=All></div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
